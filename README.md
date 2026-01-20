@@ -1,4 +1,4 @@
-# Vision-based Terrain Recognition for Lower-Limb Exoskeletons (Outdoor)
+# Vision-based Terrain Recognition for Lower-Limb Exoskeletons 
 
 A vision-based terrain recognition pipeline designed for a lower-limb exoskeleton to classify outdoor walking environments in real time. The system processes depth-derived 3D point clouds, converts them into compact binary representations, and uses a CNN-based classifier to recognize **7 terrain classes**:
 
