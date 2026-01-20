@@ -4,13 +4,13 @@ A vision-based terrain recognition pipeline designed for a lower-limb exoskeleto
 
 **[Level Ground, Ascending Stairs, Descending Stairs, Up Slope, Down Slope, Obstacle, Gap]** 
 
-This project was developed as part of an NTU Final Year Project focused on making exoskeleton terrain perception more robust under real-world outdoor conditions (glare, reflections, missing depth, mixed lighting). :contentReference[oaicite:1]{index=1}
+This project was developed as part of an NTU Final Year Project focused on making exoskeleton terrain perception more robust under real-world outdoor conditions (glare, reflections, missing depth, mixed lighting).
 
 ---
 
 ## Why this matters
 
-Lower-limb exoskeletons need reliable perception to safely switch locomotion modes (stairs vs slopes vs obstacles). Vision systems can fail outdoors due to sunlight, reflective materials (metal/glass), and depth-map holes—leading to misclassification and safety risk. :contentReference[oaicite:2]{index=2}
+Lower-limb exoskeletons need reliable perception to safely switch locomotion modes (stairs vs slopes vs obstacles). Vision systems can fail outdoors due to sunlight, reflective materials (metal/glass), and depth-map holes—leading to misclassification and safety risk.
 
 ---
 
