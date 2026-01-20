@@ -10,7 +10,7 @@ This project was developed as part of an NTU Final Year Project focused on makin
 
 ## Why this matters
 
-Lower-limb exoskeletons need reliable perception to safely switch locomotion modes (stairs vs slopes vs obstacles). Vision systems can fail outdoors due to sunlight, reflective materials (metal/glass), and depth-map holes—leading to misclassification and safety risk.
+Lower-limb exoskeletons need reliable perception to safely switch locomotion modes (stairs vs slopes vs obstacles). Vision systems can fail outdoors due to sunlight, reflective materials (metal/glass), and depth-map holes leading to misclassification and safety risk.
 
 ---
 
@@ -21,36 +21,36 @@ Lower-limb exoskeletons need reliable perception to safely switch locomotion mod
 2. **Point cloud pre-processing + dimensionality reduction**
 3. **Binary image generation** (compact representation of terrain geometry)
 4. **CNN terrain classification**
-5. Output: **terrain class + estimated distance**, passed to the exoskeleton controller for gait adaptation :contentReference[oaicite:3]{index=3}
+5. Output: **terrain class + estimated distance**, passed to the exoskeleton controller for gait adaptation 
 
 ### Hardware / integration context
-- Initially tested with **Intel RealSense D435i** :contentReference[oaicite:4]{index=4}  
-- Improved outdoor robustness by transitioning to **Stereolabs ZED (2/2i)** (polarizer helps reduce glare/reflections) :contentReference[oaicite:5]{index=5}  
-- Exoskeleton integration context includes **Jetson Nano** and **ROS** for module integration (as used in the underlying exoskeleton stack) :contentReference[oaicite:6]{index=6}
+- Initially tested with **Intel RealSense D435i** 
+- Improved outdoor robustness by transitioning to **Stereolabs ZED (2/2i)** (polarizer helps reduce glare/reflections) 
+- Exoskeleton integration context includes **Jetson Nano** and **ROS** for module integration (as used in the underlying exoskeleton stack)
 
 ---
 
 ## Key improvements explored in this work
 
 ### 1) ZED camera integration (vs RealSense)
-ZED SDK setup and integration required adapting the pipeline to ZED APIs/data formats, then validating depth/point cloud streams using sample apps. :contentReference[oaicite:7]{index=7}
+ZED SDK setup and integration required adapting the pipeline to ZED APIs/data formats, then validating depth/point cloud streams using sample apps. 
 
 ### 2) ZED Neural Depth / confidence improvements
-Explores improving depth quality under challenging lighting/reflective surfaces (see thesis sections on neural depth mapping). :contentReference[oaicite:8]{index=8}
+Explores improving depth quality under challenging lighting/reflective surfaces (see thesis sections on neural depth mapping).
 
 ### 3) Region of Interest (ROI) on depth map
 Restricts processing to the most relevant portion of the depth map to stabilize features and improve classification consistency (especially outdoors).
 
 ### 4) Depth inpainting to fill missing depth
-Uses **OpenCV Navier–Stokes inpainting (`cv2.INPAINT_NS`)** to fill holes in depth maps and reduce classification failures caused by missing/garbled depth. :contentReference[oaicite:9]{index=9}
+Uses **Navier–Stokes inpainting** to fill holes in depth maps and reduce classification failures caused by missing/garbled depth.
 
 ---
 
 ## Results / observations (high level)
 
-- Base RealSense pipeline performs well indoors on simple obstacles, but struggles with reflective objects and mixed lighting (accuracy drops significantly in those cases). :contentReference[oaicite:10]{index=10}  
-- Outdoor lighting can cause slope/stairs confusion due to depth/point-cloud distortions. :contentReference[oaicite:11]{index=11}  
-- ZED (with polarizer + depth enhancements) is explored specifically to improve performance in these outdoor failure modes. :contentReference[oaicite:12]{index=12}  
+- Base RealSense pipeline performs well indoors on simple obstacles, but struggles with reflective objects and mixed lighting (accuracy drops significantly in those cases). 
+- Outdoor lighting can cause slope/stairs confusion due to depth/point-cloud distortions. 
+- ZED (with polarizer + depth enhancements) is explored specifically to improve performance in these outdoor failure modes.   
 
 ---
 
@@ -63,7 +63,7 @@ Uses **OpenCV Navier–Stokes inpainting (`cv2.INPAINT_NS`)** to fill holes in d
 - CUDA-capable GPU (recommended for ZED / CNN inference)
 - OpenCV
 - For **RealSense**: Intel RealSense SDK (librealsense)
-- For **ZED**: ZED SDK + CUDA + OpenCV configured correctly :contentReference[oaicite:13]{index=13}
+- For **ZED**: ZED SDK + CUDA + OpenCV configured correctly 
 
 ### Install (example)
 ```bash
