@@ -56,7 +56,6 @@ Uses **Navier–Stokes inpainting** to fill holes in depth maps and reduce class
 
 ## Getting started
 
-> **Note:** Repo structures differ—adjust paths/entrypoints based on your codebase.
 
 ### Prerequisites
 - Python 3.8+ (recommended)
