@@ -2,7 +2,7 @@
 
 A vision-based terrain recognition pipeline designed for a lower-limb exoskeleton to classify outdoor walking environments in real time. The system processes depth-derived 3D point clouds, converts them into compact binary representations, and uses a CNN-based classifier to recognize **7 terrain classes**:
 
-**[Level Ground, Ascending Stairs, Descending Stairs, Up Slope, Down Slope, Obstacle, Gap]** :contentReference[oaicite:0]{index=0}
+**[Level Ground, Ascending Stairs, Descending Stairs, Up Slope, Down Slope, Obstacle, Gap]** 
 
 This project was developed as part of an NTU Final Year Project focused on making exoskeleton terrain perception more robust under real-world outdoor conditions (glare, reflections, missing depth, mixed lighting). :contentReference[oaicite:1]{index=1}
 
