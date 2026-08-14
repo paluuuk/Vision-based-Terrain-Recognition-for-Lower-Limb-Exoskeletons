@@ -1,0 +1,9 @@
+numpy
+opencv-python
+matplotlib
+scipy
+tensorflow
+keras
+
+# ZED camera integration requires the Stereolabs ZED SDK and its Python bindings
+# installed separately for the target CUDA / OS environment.
