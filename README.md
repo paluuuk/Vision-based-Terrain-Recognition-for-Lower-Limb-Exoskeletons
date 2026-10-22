@@ -80,7 +80,7 @@ The classifier is implemented in TensorFlow/Keras using stacked convolutional bl
 - fully connected classification layers
 - softmax output across seven terrain classes
 
-The project work achieved approximately **95% terrain-classification accuracy** across seven classes during development and evaluation.
+The broader project reported approximately **95% classification accuracy** across seven terrain classes. This is a historical project result; the training dataset, trained weights, and a self-contained evaluation harness are not included here, so it is not presented as a newly reproduced repository benchmark.
 
 ## Repository Contents
 
@@ -91,8 +91,8 @@ The current repository contains several experiment and integration variants deve
 | `Terrain_Recognition_ZED_ROI.py` | ZED-based terrain-recognition pipeline with ROI processing |
 | `Terrain_Recognition_ZED_inpaint.py` | Depth inpainting, denoising, temporal filtering, point-cloud processing, and CNN inference |
 | `Terrain_Recognition_ZED_neural.py` | Experiments using ZED neural depth mode |
-| `batch_run_DL_client.py` | Batch/deep-learning inference workflow |
-| `batch_run_DL_client_inpainting.py` | Batch workflow incorporating depth inpainting |
+| `batch_run_DL_client.py` | Intel RealSense camera and deep-learning client variant |
+| `batch_run_DL_client_inpainting.py` | Intel RealSense client variant with depth inpainting |
 
 ## Tech Stack
 
@@ -127,7 +127,24 @@ source .venv/bin/activate       # macOS/Linux
 # .venv\Scripts\activate      # Windows
 ```
 
-Install the Python dependencies required by the specific experiment you want to run, together with the appropriate camera SDK.
+Install the core dependencies, then the camera SDK needed by the selected script:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+| Script family | Additional runtime requirements |
+| --- | --- |
+| `Terrain_Recognition_ZED_*.py` | Stereolabs ZED SDK and matching `pyzed.sl` Python bindings |
+| `batch_run_DL_client*.py` | Intel RealSense SDK/bindings and the packages in `requirements-realsense.txt` |
+
+The RealSense variants also import PyTorch. Their optional dependency list extends the core environment:
+
+```bash
+python -m pip install -r requirements-realsense.txt
+```
+
+These are hardware-dependent research scripts with legacy TensorFlow/Keras APIs and local artifact paths. Review the chosen variant before running it; camera initialization is not a hardware-free example.
 
 > Some scripts expect trained model weights such as `best_model.h5` and compatible ZED hardware. These artifacts are not currently included in the repository.
 
