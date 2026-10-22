@@ -159,3 +159,11 @@ A natural next engineering step is to separate the pipeline into reusable module
 This work was developed as part of a **Nanyang Technological University final-year project** in collaboration with the **Rehabilitation Research Institute of Singapore (RRIS)**, focused on vision-based terrain recognition for lower-limb exoskeleton control.
 
 The broader goal is reliable perception under real-world conditions where depth cameras can struggle with glare, reflective materials, changing illumination, and missing depth measurements.
+
+## Related engineering projects
+
+- [Aerial road segmentation](https://github.com/paluuuk/Aerial-Image-Segmentation)
+- [Satellite image classification](https://github.com/paluuuk/Satellite_Image_Classification)
+
+[View all selected engineering work](https://github.com/paluuuk)
+
